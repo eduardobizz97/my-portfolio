@@ -1,5 +1,12 @@
 import React from "react";
-import { Link, NavLink, Redirect, Route, Switch,withRouter } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  Redirect,
+  Route,
+  Switch,
+  withRouter,
+} from "react-router-dom";
 import styled from "styled-components";
 import { COLORS } from "../constants/Theme";
 import AboutMeContainer from "../containers/about-me/AboutMeContainer";
@@ -7,8 +14,8 @@ import ContactContainer from "../containers/contact-me/ContactContainer";
 import HomeContainer from "../containers/home/HomeContainer";
 import ProjectsContainer from "../containers/projects/ProjectsContainer";
 
-const NavContainer = styled.div`
-`;
+
+const NavContainer = styled.div``;
 
 const BodyContainer = styled.div``;
 
@@ -35,10 +42,9 @@ const ListItem = styled.li`
   font-weight: 400;
 `;
 
+const Navbar = (props) => {
 
 
-const Navbar = props => {
-  console.log(props);
   return (
     <div>
       <NavContainer>
@@ -87,7 +93,7 @@ const Navbar = props => {
         </header>
       </NavContainer>
       <BodyContainer>
-        <Switch  >
+        <Switch>
           <Route path="/" exact component={HomeContainer} />
           <Route path="/projectos" component={ProjectsContainer} />
           <Route path="/acerca" component={AboutMeContainer} />

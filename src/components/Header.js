@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {  useEffect,useState } from "react";
 import styled from "styled-components";
 import { COLORS, SIZES } from "../constants/Theme";
 import { useWindowSize } from "../utils/useWindowsSize";
@@ -20,21 +20,28 @@ const MyKnowledge = styled.p`
   font-size: ${SIZES.bigTitle};
 `;
 
-
 const Header = () => {
+  const [paragraph, setParagraph] = useState(
+    `Hola! En esta seccion podras encontrar mis proyectos, los cuales han sido realizados en lenguajes como: java, javascript, PHP, utilizando frameworks como: Spring y laravel, asi como tambien la libreria React.js.`
+  );
 
   const { width } = useWindowSize();
 
-  let paragraph = `Hola! En esta seccion podras encontrar mis proyectos, los cuales han sido realizados en lenguajes como: java, javascript,
-  PHP, utilizando frameworks como: Spring y laravel, asi como tambien la
-  libreria React.js.`;
+  useEffect(() => {
 
-  if (width < 630) {
-    paragraph = 'Mis proyectos:';
-  }
+    if (width < 600) {
+      setParagraph(`Mis proyectos:`);
+    }
+    return ()=>{
+      if (width > 600) {
+        setParagraph(`Hola! En esta seccion podras encontrar mis proyectos, los cuales han sido realizados en lenguajes como: java, javascript, PHP, utilizando frameworks como: Spring y laravel, asi como tambien la libreria React.js.`);
+      }
+    }
+  },[width]);
+
   return (
     <Container>
-      <div style={{ display: "flex", width: "50%" }}>
+      <div style={{ display: "flex", justifyContent: "center", width: "50%" }}>
         <MyKnowledge>{paragraph}</MyKnowledge>
       </div>
     </Container>

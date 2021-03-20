@@ -9,7 +9,7 @@ export const useWindowSize = ()=> {
   const isSSR = typeof window !== "undefined";
 
   const [windowSize, setWindowSize] = useState({
-    width: isSSR ? 1200 : window.innerWidth,
+    width: isSSR ? window.innerWidth : window.innerWidth,
     height: isSSR ? 800 : window.innerHeight
   });
 
