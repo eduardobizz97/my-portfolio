@@ -12,6 +12,7 @@ import AboutMeContainer from "../containers/about-me/AboutMeContainer";
 import ContactContainer from "../containers/contact-me/ContactContainer";
 import HomeContainer from "../containers/home/HomeContainer";
 import ProjectsContainer from "../containers/projects/ProjectsContainer";
+import { COLORS } from "../constants/Theme";
 
 const Navbar = (props) => {
   const [burguermenu, setBurguermenu] = useState(false);
@@ -28,7 +29,7 @@ const Navbar = (props) => {
           exact
           className="link"
           style={{ color: "white", textDecoration: "none" }}
-          activeStyle={{ color: "#e9c46a" }}
+          activeStyle={{ color: "#e9c46a"}}
           onClick={()=>setBurguermenu(false)}
         >
           Inicio

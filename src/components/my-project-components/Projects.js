@@ -25,7 +25,7 @@ const useStyles = makeStyles(() => ({
     margin: "20px",
   },
   paper: {
-    width: "50%",
+    width: "65%",
     ['@media (max-width:768px)']: {
       width: '100%'
     }

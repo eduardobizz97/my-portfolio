@@ -24,6 +24,7 @@ export const Nav = styled.nav`
     }
   }
   li {
+    
     text-decoration: none;
     display: inline-block;
     margin: 10px;
@@ -57,6 +58,7 @@ export const HamburguerMenu = styled.nav`
     }
 
     li {
+      
       list-style: none;
       text-decoration: none;
     }

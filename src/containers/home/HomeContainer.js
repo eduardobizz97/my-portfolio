@@ -10,7 +10,8 @@ const Container = styled.div`
   justify-content: center;
 `;
 const Header = styled.div`
-  height: 500px;
+  padding:30px;
+  height: 400px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -23,14 +24,16 @@ const FooterButton = styled.div`
 `;
 
 const HomeContainer = () => {
+  const projectsClickHandler = ()=>{
+    alert('chupalo');
+  }
   return (
     <Container>
       <Header>
         <Biography />
-        <AboutmeImage />
       </Header>
       <FooterButton>
-        <MyButton />
+        <MyButton clicked={projectsClickHandler}/>
       </FooterButton>
     </Container>
   );
