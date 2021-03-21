@@ -29,11 +29,11 @@ const Header = () => {
 
   useEffect(() => {
 
-    if (width < 600) {
+    if (width < 768) {
       setParagraph(`Mis proyectos:`);
     }
     return ()=>{
-      if (width > 600) {
+      if (width > 768) {
         setParagraph(`Hola! En esta seccion podras encontrar mis proyectos, los cuales han sido realizados en lenguajes como: java, javascript, PHP, utilizando frameworks como: Spring y laravel, asi como tambien la libreria React.js.`);
       }
     }
