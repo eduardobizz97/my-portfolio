@@ -1,5 +1,5 @@
-import { FaBars } from 'react-icons/fa';
-import React, {useEffect, useState} from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
 import {
   Link,
   NavLink,
@@ -20,8 +20,7 @@ const NavContainer = styled.div``;
 
 const BodyContainer = styled.div``;
 
-const NavBar = styled.nav`
-
+const Nav = styled.nav`
   height: 70px;
   display: flex;
   flex-direction: row;
@@ -29,110 +28,156 @@ const NavBar = styled.nav`
   justify-content: flex-end;
   background-color: ${COLORS.accent};
 
-  
-
-
-`;
-
-const UnorderedList = styled.ul`
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 0;
-  @media (max-width: 768px) {
-    .link{
-      display: none;
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    @media (max-width: 768px) {
+      .link {
+        display: none;
+      }
     }
   }
-  
+  li {
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+    font-weight: 400;
+  }
+
+  @media (max-width: 768px) {
+    .burguerMenu {
+      background-color: red;
+      ul {
+        background-color: red;
+      }
+    }
+  }
 `;
 
-const ListItem = styled.li`
-  text-decoration: none;
-  display: inline-block;
-  margin: 10px;
-  font-weight: 400;
-  
+const HamburguerMenu = styled.nav`
+  position: relative;
+  width: 100%;
+  background-color: ${COLORS.accent};
+  ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 30px;
+    
+    
+  }
+
+  li{
+    list-style: none;
+    text-decoration: none;
+  }
 `;
 
-const Icon = styled(FaBars)`
+const OpenMenu = styled(FaBars)`
+  padding: 5px;
   display: none;
-  color: white;
-  font-size: 50px;
+  background-color: white;
+  color: ${COLORS.accent};
+  font-size: 40px;
   border: 1px solid white;
   border-radius: 8px;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
+
   @media (max-width: 768px) {
     display: block;
   }
-  
+`;
+
+const CloseMenu = styled(FaTimes)`
+  display: none;
+  background-color: white;
+  color: ${COLORS.accent};
+  font-size: 50px;
+  border: 1px solid white;
+  border-radius: 8px;
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 
 const Navbar = (props) => {
-  const [mobile, setMobile] = useState(false)
+  const [burguermenu, setBurguermenu] = useState(false);
   const { width } = useWindowSize();
 
-  const burguerMenuHandler = ()=>{
-    alert('chupalo');
+  const burguerMenuHandler = () => {
+    setBurguermenu(!burguermenu);
   };
+
   let NavbarComponent = (
-    <NavBar>
-      <UnorderedList>
-        <ListItem>
+      <ul>
+        <li>
           <NavLink
             to="/"
             exact
-            className='link'
+            className="link"
             style={{ color: "white", textDecoration: "none" }}
             activeStyle={{ color: "#e9c46a" }}
           >
             Inicio
           </NavLink>
-        </ListItem>
-        <ListItem>
+        </li>
+        <li>
           <NavLink
             to="/projectos"
-            className='link'
+            className="link"
             style={{ color: "white", textDecoration: "none" }}
             activeStyle={{ color: "#e9c46a" }}
           >
             Proyectos
           </NavLink>
-        </ListItem>
-        <ListItem>
+        </li>
+        <li>
           <NavLink
             to="/acerca"
-            className='link'
+            className="link"
             style={{ color: "white", textDecoration: "none" }}
             activeStyle={{ color: "#e9c46a" }}
           >
             Acerca de mi
           </NavLink>
-        </ListItem>
-        <ListItem>
+        </li>
+        <li>
           <NavLink
             to="/contacto"
-            className='link'
+            className="link"
             style={{ color: "white", textDecoration: "none" }}
             activeStyle={{ color: "#e9c46a" }}
           >
             Contacto
           </NavLink>
-        </ListItem>
-        <ListItem>
-          <Icon onClick={burguerMenuHandler}/>
-        </ListItem>
-      </UnorderedList>
-    </NavBar>
-  );  
+        </li>
+        
+      </ul>
+  );
 
   return (
     <div>
       <NavContainer>
-        <header>{NavbarComponent}</header>
+        <header>
+          <Nav>
+          {NavbarComponent}<li>
+          {burguermenu ? (
+            <CloseMenu onClick={burguerMenuHandler} />
+          ) : (
+            <OpenMenu onClick={burguerMenuHandler} />
+          )}
+        </li></Nav></header>
+        {burguermenu ? <HamburguerMenu>{NavbarComponent}</HamburguerMenu> : null}
       </NavContainer>
       <BodyContainer>
         <Switch>
