@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { NavLink, Route, Switch, withRouter } from "react-router-dom";
+import { NavLink,Route, Switch, withRouter } from "react-router-dom";
 import {
   Nav,
+  NavContainer,
   HamburguerMenu,
   OpenMenu,
   CloseMenu,
@@ -13,6 +14,9 @@ import ContactContainer from "../containers/contact-me/ContactContainer";
 import HomeContainer from "../containers/home/HomeContainer";
 import ProjectsContainer from "../containers/projects/ProjectsContainer";
 import { COLORS } from "../constants/Theme";
+
+
+
 
 const Navbar = (props) => {
   const [burguermenu, setBurguermenu] = useState(false);
@@ -28,9 +32,9 @@ const Navbar = (props) => {
           to="/"
           exact
           className="link"
-          style={{ color: "white", textDecoration: "none" }}
-          activeStyle={{ color: "#e9c46a"}}
-          onClick={()=>setBurguermenu(false)}
+          
+          // activeStyle={{ color: "#e9c46a" }}
+          onClick={() => setBurguermenu(false)}
         >
           Inicio
         </NavLink>
@@ -39,9 +43,9 @@ const Navbar = (props) => {
         <NavLink
           to="/projectos"
           className="link"
-          style={{ color: "white", textDecoration: "none" }}
-          activeStyle={{ color: "#e9c46a" }}
-          onClick={()=>setBurguermenu(false)}
+          
+          // activeStyle={{ color: "#e9c46a" }}
+          onClick={() => setBurguermenu(false)}
         >
           Proyectos
         </NavLink>
@@ -50,9 +54,9 @@ const Navbar = (props) => {
         <NavLink
           to="/acerca"
           className="link"
-          style={{ color: "white", textDecoration: "none" }}
-          activeStyle={{ color: "#e9c46a" }}
-          onClick={()=>setBurguermenu(false)}
+          
+          // activeStyle={{ color: "#e9c46a" }}
+          onClick={() => setBurguermenu(false)}
         >
           Acerca de mi
         </NavLink>
@@ -61,20 +65,20 @@ const Navbar = (props) => {
         <NavLink
           to="/contacto"
           className="link"
-          style={{ color: "white", textDecoration: "none" }}
-          activeStyle={{ color: "#e9c46a" }}
-          onClick={()=>setBurguermenu(false)}
+          // activeStyle={{ color: "#e9c46a" }}
+          onClick={() => setBurguermenu(false)}
         >
           Contacto
         </NavLink>
       </li>
     </ul>
   );
-
+    console.log(props);
   return (
-    <div>
-      <div style={{position: 'sticky', top: 0}}>
-        <header >
+
+    <NavContainer style={{height: '100%'}}>
+      <div style={{ position: "sticky", top: 0 }}>
+        <header>
           <Nav>
             {NavbarComponent}
             <li>
@@ -99,7 +103,7 @@ const Navbar = (props) => {
           <Route component={HomeContainer} />
         </Switch>
       </BodyContainer>
-    </div>
+    </NavContainer>
   );
 };
 

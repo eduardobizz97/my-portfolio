@@ -1,11 +1,20 @@
 import styled from "styled-components";
 import { COLORS } from "../constants/Theme";
-
+import { NavLink as Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-export const BodyContainer = styled.div``;
+
+export const NavContainer = styled.div`
+
+
+`;
+
+export const BodyContainer = styled.div`
+  
+  background-color: ${COLORS.accent};
+`;
 
 export const Nav = styled.nav`
-  height: 100px;
+  height: 80px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -17,6 +26,11 @@ export const Nav = styled.nav`
     flex-direction: row;
     justify-content: center;
     margin: 0;
+
+    
+
+    
+    
     @media (max-width: 768px) {
       .link {
         display: none;
@@ -24,11 +38,21 @@ export const Nav = styled.nav`
     }
   }
   li {
-    
     text-decoration: none;
     display: inline-block;
     margin: 10px;
     font-weight: 400;
+    
+    
+  }
+
+  .link{
+    color:white;
+    text-decoration: none;
+    &:hover {
+      
+      color: ${COLORS.primaryColor};
+    }
   }
 
   @media (max-width: 768px) {
@@ -58,21 +82,29 @@ export const HamburguerMenu = styled.nav`
     }
 
     li {
-      
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 5px;
+      text-align: center;
       list-style: none;
       text-decoration: none;
     }
+    .link{
+    color:white;
+    text-decoration: none;
+    &:hover {
+      
+      color: ${COLORS.primaryColor};
+    }
+  }
   }
 `;
 
 export const OpenMenu = styled(FaBars)`
   padding: 5px;
   display: none;
-  background-color: white;
-  color: ${COLORS.accent};
+  color: ${COLORS.primaryColor};
   font-size: 35px;
-  border: 1px solid white;
-  border-radius: 8px;
   &:hover {
     cursor: pointer;
   }
@@ -85,11 +117,8 @@ export const OpenMenu = styled(FaBars)`
 export const CloseMenu = styled(FaTimes)`
   padding: 5px;
   display: none;
-  background-color: white;
-  color: ${COLORS.accent};
+  color: ${COLORS.primaryColor};
   font-size: 35px;
-  border: 1px solid white;
-  border-radius: 8px;
   &:hover {
     cursor: pointer;
   }

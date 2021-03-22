@@ -1,6 +1,8 @@
 export const COLORS = {
-  primaryColor: '#2a9d8f',
-  accent: '#264653'
+  primaryColor: '#64FFDA',
+  accent: '#0A192F',
+  fontColorPrimay: '#CCD6F6',
+  fontColorAccent: '#8892B0'
 }
 
 export const SIZES = {

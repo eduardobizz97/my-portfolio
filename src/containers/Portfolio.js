@@ -1,14 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import Navbar from '../components/Navbar';
+import Navbar from "../components/Navbar";
 
-
+const Nav = styled(Navbar)`
+  
+`;
 
 const Portfolio = () => {
   return (
     <React.Fragment>
-      <Navbar/>
+      <Nav />
+      
     </React.Fragment>
   );
 };

@@ -7,7 +7,7 @@ const Container = styled.div`
   width: 100%;
   height: 270px;
   overflow: hidden;
-  background-color: ${COLORS.primaryColor};
+  background-color: ${COLORS.accent};
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -16,7 +16,7 @@ const Container = styled.div`
 
 const MyKnowledge = styled.p`
   text-align: center;
-  color: white;
+  color: ${COLORS.primaryColor};
   font-size: ${SIZES.bigTitle};
 `;
 

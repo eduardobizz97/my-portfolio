@@ -4,11 +4,16 @@ import { COLORS } from '../constants/Theme';
 
 const Button = styled.button`
   cursor: pointer; 
+  opacity: 0.7;
   padding: 15px;
-  background-color: white;
+  background-color: transparent;
   border: 2px solid ${COLORS.primaryColor};
   color: ${COLORS.primaryColor};
   border-radius: 3px;
+  &:hover{
+    opacity: 1;
+    
+  }
 `;
 
 const MyButton = props => {
