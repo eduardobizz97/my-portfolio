@@ -4,6 +4,7 @@ import { COLORS } from '../constants/Theme';
 
 const Button = styled.button`
   cursor: pointer; 
+  font-size: 18px;
   opacity: 0.7;
   padding: 15px;
   background-color: transparent;

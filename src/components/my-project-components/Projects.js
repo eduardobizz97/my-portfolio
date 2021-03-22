@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Project from "./project/Project";
 import { PROJECTS } from "../../data/projects-data";
 import { Grid, makeStyles, Paper } from "@material-ui/core";
+import { COLORS } from "../../constants/Theme";
 import { useWindowSize } from "../../utils/useWindowsSize";
 
 
@@ -25,7 +26,10 @@ const useStyles = makeStyles(() => ({
     margin: "20px",
   },
   paper: {
+    backgroundColor: '#63a4ff',
+    backgroundImage: `linear-gradient(315deg, #63a4ff 5%, ${COLORS.primaryColor} 74%)`,
     width: "65%",
+    color: 'white',
     ['@media (max-width:768px)']: {
       width: '100%'
     }
@@ -39,11 +43,11 @@ const Projects = () => {
 
   return (
     <ProjectsContainer>
-      <Grid container align="center" spacing={6} className={classes.grid}>
+      <Grid container align="center" spacing={6}  className={classes.grid}>
         {PROJECTS.map((project, id) => {
           return (
             <Grid item xs={12} md={6} key={project.id}>
-              <Paper className={classes.paper}>
+              <Paper  className={classes.paper}>
                 <Project
                   title={project.title}
                   imageUrl={project.imageUrl}

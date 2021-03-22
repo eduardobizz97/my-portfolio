@@ -6,7 +6,7 @@ export const COLORS = {
 }
 
 export const SIZES = {
-  paragraph: '1.125rem',
+  paragraph: '1.126rem',
   smallTitle: '1.25rem',
   title: '1.375rem',
   bigTitle: '1.531rem' 

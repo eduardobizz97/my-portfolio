@@ -14,6 +14,7 @@ import ContactContainer from "../containers/contact-me/ContactContainer";
 import HomeContainer from "../containers/home/HomeContainer";
 import ProjectsContainer from "../containers/projects/ProjectsContainer";
 import { COLORS } from "../constants/Theme";
+import Separator from "./Separator";
 
 
 
@@ -76,7 +77,7 @@ const Navbar = (props) => {
     console.log(props);
   return (
 
-    <NavContainer style={{height: '100%'}}>
+    <NavContainer style={{height: 'max-content'}}>
       <div style={{ position: "sticky", top: 0 }}>
         <header>
           <Nav>
@@ -94,6 +95,7 @@ const Navbar = (props) => {
           <HamburguerMenu>{NavbarComponent}</HamburguerMenu>
         ) : null}
       </div>
+      
       <BodyContainer>
         <Switch>
           <Route path="/" exact component={HomeContainer} />

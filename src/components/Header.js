@@ -12,6 +12,7 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  
 `;
 
 const MyKnowledge = styled.p`
@@ -20,9 +21,11 @@ const MyKnowledge = styled.p`
   font-size: ${SIZES.bigTitle};
 `;
 
-const Header = () => {
+const Header = props => {
+
+
   const [paragraph, setParagraph] = useState(
-    `Hola! En esta seccion podras encontrar mis proyectos, los cuales han sido realizados en lenguajes como: java, javascript, PHP, utilizando frameworks como: Spring y laravel, asi como tambien la libreria React.js.`
+    props.title
   );
 
   const { width } = useWindowSize();
@@ -30,11 +33,11 @@ const Header = () => {
   useEffect(() => {
 
     if (width < 768) {
-      setParagraph(`Mis proyectos:`);
+      setParagraph(props.responsiveTitle);
     }
     return ()=>{
       if (width > 768) {
-        setParagraph(`Hola! En esta seccion podras encontrar mis proyectos, los cuales han sido realizados en lenguajes como: java, javascript, PHP, utilizando frameworks como: Spring y laravel, asi como tambien la libreria React.js.`);
+        setParagraph(props.title);
       }
     }
   },[width]);
@@ -43,6 +46,7 @@ const Header = () => {
     <Container>
       <div style={{ display: "flex", justifyContent: "center", width: "50%" }}>
         <MyKnowledge>{paragraph}</MyKnowledge>
+        
       </div>
     </Container>
   );

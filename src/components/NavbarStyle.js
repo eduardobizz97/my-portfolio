@@ -5,7 +5,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 export const NavContainer = styled.div`
 
-
+  height: 100%;
 `;
 
 export const BodyContainer = styled.div`
@@ -67,11 +67,14 @@ export const Nav = styled.nav`
 
 export const HamburguerMenu = styled.nav`
   display: none;
+  
   @media (max-width: 768px) {
     display: block;
+    height:100%;
     position: relative;
     width: 100%;
     background-color: ${COLORS.accent};
+    border-bottom: 1px solid ${COLORS.primaryColor};
     ul {
       display: flex;
       flex-direction: column;
@@ -82,12 +85,15 @@ export const HamburguerMenu = styled.nav`
     }
 
     li {
-      width: 100%;
+      padding: 10px;
+      width: 90%;
       margin-top: 10px;
       border-radius: 5px;
       text-align: center;
       list-style: none;
       text-decoration: none;
+      
+      border-bottom: 1px solid white;
     }
     .link{
     color:white;
