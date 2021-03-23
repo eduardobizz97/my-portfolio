@@ -10,7 +10,7 @@ export const NavContainer = styled.div`
 
 export const BodyContainer = styled.div`
   
-  background-color: ${COLORS.accent};
+  background-color: transparent;
 `;
 
 export const Nav = styled.nav`

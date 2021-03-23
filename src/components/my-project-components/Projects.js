@@ -22,13 +22,18 @@ const useStyles = makeStyles(() => ({
   },
 
   grid: {
+    height: '100%',
     width: "100%",
     margin: "20px",
+  },
+  gridItem:{
+    width: '40%',
+    height: '50px'
   },
   paper: {
     backgroundColor: '#63a4ff',
     backgroundImage: `linear-gradient(315deg, #63a4ff 5%, ${COLORS.primaryColor} 74%)`,
-    width: "65%",
+    width: "80%",
     color: 'white',
     ['@media (max-width:768px)']: {
       width: '100%'
@@ -43,10 +48,10 @@ const Projects = () => {
 
   return (
     <ProjectsContainer>
-      <Grid container align="center" spacing={6}  className={classes.grid}>
+      <Grid container align="center" spacing={3}  className={classes.grid}>
         {PROJECTS.map((project, id) => {
           return (
-            <Grid item xs={12} md={6} key={project.id}>
+            <Grid item xs={12} md={4} key={project.id} color=""className={classes.gridItem}>
               <Paper  className={classes.paper}>
                 <Project
                   title={project.title}
