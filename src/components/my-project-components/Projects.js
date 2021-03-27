@@ -7,62 +7,49 @@ import { Grid, makeStyles, Paper } from "@material-ui/core";
 import { COLORS } from "../../constants/Theme";
 import { useWindowSize } from "../../utils/useWindowsSize";
 
-
-
 const ProjectsContainer = styled.div`
+  margin: auto;
   width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-`;
-
-const useStyles = makeStyles(() => ({
-  root: {
-    flexGrow: 1,
-  },
-
-  grid: {
-    height: '100%',
-    width: "100%",
-    margin: "20px",
-  },
-  gridItem:{
-    width: '40%',
-    height: '50px'
-  },
-  paper: {
-    backgroundColor: '#63a4ff',
-    backgroundImage: `linear-gradient(315deg, #63a4ff 5%, ${COLORS.primaryColor} 74%)`,
-    width: "80%",
-    color: 'white',
-    ['@media (max-width:768px)']: {
-      width: '100%'
-    }
-  },
-}));
-
-const Projects = () => {
+  align-items: center;
+  flex-direction: column;
   
 
-  const classes = useStyles();
+`;
 
+const Lista = styled.div`
+  background-color: transparent;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 10px;
+  @media (max-width :1240px){
+    width:100%;
+  }
+  @media (max-width :768px){
+    width:100%;
+  }
+`;
+
+const Projects = () => {
   return (
     <ProjectsContainer>
-      <Grid container align="center" spacing={3}  className={classes.grid}>
-        {PROJECTS.map((project, id) => {
-          return (
-            <Grid item xs={12} md={4} key={project.id} color=""className={classes.gridItem}>
-              <Paper  className={classes.paper}>
-                <Project
-                  title={project.title}
-                  imageUrl={project.imageUrl}
-                  description={project.description}
-                />
-              </Paper>
-            </Grid>
-          );
-        })}
-      </Grid>
+      
+        <Lista>
+          {PROJECTS.map((project, index) => {
+            return (
+              <Project
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                imageUrl={project.imageUrl}
+                languages={project.languages}
+              />
+            );
+          })}
+        </Lista>
     </ProjectsContainer>
   );
 };

@@ -4,7 +4,8 @@ class Project {
     title,
     description,
     imageUrl,
-    duration
+    duration,
+    languages
 
   
   ){
@@ -13,6 +14,7 @@ class Project {
     this.description=description;
     this.imageUrl=imageUrl;
     this.duration=duration;
+    this.languages=languages;
   }
 }
 

@@ -1,0 +1,74 @@
+{PROJECTS.map((project, id) => {
+          return (
+            // <Grid container direction="column">
+              <Grid item xs={12} md={4} key={project.id} className={classes.gridItem}>
+                <Paper  className={classes.paper}>
+                  <Project
+                    title={project.title}
+                    imageUrl={project.imageUrl}
+                    description={project.description}
+                  />
+                </Paper>
+              </Grid>
+            // </Grid>
+          );
+        })}
+
+
+
+         <Grid item xs={12} md={4} key={project.id} className={classes.gridItem}>
+                <Paper  className={classes.paper}>
+                  <Project
+                    title={project.title}
+                    imageUrl={project.imageUrl}
+                    description={project.description}
+                  />
+                </Paper>
+              </Grid>
+
+
+              <Grid
+        container
+        xs={12}
+        align="center"
+        spacing={0}
+        className={classes.grid}
+      >
+        <Grid
+          container
+          direction="row"
+          align="center"
+          justify="center"
+          spacing={0}
+        >
+          {PROJECTS.map((project, id) => {
+            return (
+              // <Grid container direction="column">
+              <Grid
+                item
+                xs={12}
+                md={4}
+                key={project.id}
+                className={classes.gridItem}
+              >
+                a
+                <Paper className={classes.paper}>
+                  <Project
+                    title={project.title}
+                    imageUrl={project.imageUrl}
+                    description={project.description}
+                  />
+                </Paper>
+              </Grid>
+              // </Grid>
+            );
+          })}
+        </Grid>
+      </Grid>
+
+
+      <ImageContainer src={props.imageUrl} />
+      <TextContainer>
+        <Title>{props.title}</Title>
+        <Description>{props.description}</Description>
+      </TextContainer>
