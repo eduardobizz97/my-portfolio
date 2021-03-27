@@ -1,12 +1,11 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import AboutmeImage from "../../components/AboutmeImage";
 import Biography from "../../components/Biography";
 import MyButton from "../../components/MyButton";
 import { COLORS } from "../../constants/Theme";
 
 const Container = styled.div`
-  position:fixed;
   width: 100%;
   height: 100%;
   display: flex;
@@ -19,15 +18,23 @@ const Container = styled.div`
 `;
 const Header = styled.div`
   background-color: transparent;
-  width: 90%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
 
+const appear = keyframes`
+from{
+  transform: translateX(-100%);
+}to{
+  transform: translateX(0%);
+}
+`;
 const FooterButton = styled.div`
+  display: inherit;
   background-color: transparent;
   display: flex;
   width: 100%;
@@ -35,6 +42,9 @@ const FooterButton = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  transform: translateX(-100%);
+  animation: ${appear} 2s ease forwards;
+  animation-delay: 4s;
 `;
 
 const MyProfileFoto = styled.img`
@@ -44,15 +54,32 @@ const MyProfileFoto = styled.img`
   border-radius: 200px;
   border: 4px solid ${COLORS.primaryColor};
 `;
+
+const rotate = keyframes`
+  0% {
+    opacity: 0;
+    
+    transform: rotate(0deg);
+  }30%{
+    transform: rotate(50deg);
+  }75%{
+    border-bottom: 1px solid white;
+    transform: rotate(-180deg);
+  }100%{
+    border-bottom: 3px solid white;
+  }
+`;
 const ImageContent = styled.div`
-  padding-bottom:20px;
-  width: 30%;
+  padding-bottom: 20px;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  border-bottom: 1px solid white;
+
+  animation: ${rotate} 4s ease forwards;
+
   @media (max-width: 738px) {
     width: 50%;
   }

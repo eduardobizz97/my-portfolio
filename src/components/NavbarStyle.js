@@ -4,13 +4,17 @@ import { NavLink as Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export const NavContainer = styled.div`
-
+  display: flex;
+  flex-direction: column;
   height: 100%;
 `;
 
 export const BodyContainer = styled.div`
-  
+  width: 100%;
+  display: flex;
+  height: 100%;
   background-color: transparent;
+  justify-content: center;
 `;
 
 export const Nav = styled.nav`

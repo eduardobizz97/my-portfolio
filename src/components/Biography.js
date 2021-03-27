@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { COLORS } from "../constants/Theme";
 
 const BiographyContainer = styled.div`
-
+  padding: 20px;
   text-align: center;
 
   h1,h2,h3,h5{

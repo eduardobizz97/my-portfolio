@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Portfolio from "./containers/Portfolio";
 
 const Portafolio = styled(Portfolio)`
+  
   font-family: "Karla", sans-serif;
 `;
 
