@@ -3,10 +3,7 @@ import styled from "styled-components";
 
 import Project from "./project/Project";
 import { PROJECTS } from "../../data/projects-data";
-import { Grid, makeStyles, Paper } from "@material-ui/core";
-import { COLORS } from "../../constants/Theme";
-import { useWindowSize } from "../../utils/useWindowsSize";
-import Margin from "../MyMargins";
+
 import MyMargins from "../MyMargins";
 
 const ProjectsContainer = styled.div`
@@ -22,7 +19,7 @@ const ProjectsContainer = styled.div`
 
 const Lista = styled.div`
   background-color: transparent;
-  width: 80%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;

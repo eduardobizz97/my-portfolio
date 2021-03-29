@@ -16,7 +16,7 @@ const Container = styled.div`
   }
 
   p {
-    font-size:60px;
+    font-size:40px;
     transform: inherit;
     text-align: center;
     writing-mode: vertical-rl;
@@ -24,11 +24,17 @@ const Container = styled.div`
   }
 
 `;
+
+const TextContainer = styled.div`
+  display: flex;
+  width:50%;
+  height: 100%;
+`;
 const MyMargins = (props) => {
   return (
     <Container>
-
-        <p>Hecho por Eduardo Bizzarro </p>
+        <TextContainer><p>Hecho por Eduardo Bizzarro </p></TextContainer>
+        
     </Container>
   );
 };

@@ -44,7 +44,7 @@ const Header = props => {
 
   return (
     <Container>
-      <div style={{ display: "flex", justifyContent: "center", width: "50%" }}>
+      <div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
         <MyKnowledge>{paragraph}</MyKnowledge>
         
       </div>
