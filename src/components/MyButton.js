@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { COLORS } from '../constants/Theme';
 
 const Button = styled.button`
@@ -11,6 +11,7 @@ const Button = styled.button`
   border: 2px solid ${COLORS.primaryColor};
   color: ${COLORS.primaryColor};
   border-radius: 3px;
+  
   &:hover{
     opacity: 1;
     
@@ -18,7 +19,7 @@ const Button = styled.button`
 `;
 
 const MyButton = props => {
-  return <Button onClick={props.clicked}>Mis proyectos</Button>;
+  return <Button onClick={props.clicked}>{props.children}</Button>;
 };
 
 export default MyButton;
