@@ -13,8 +13,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${COLORS.accent};
-  @media (max-width: 738px) {
-  }
 `;
 const Header = styled.div`
   background-color: transparent;
@@ -33,7 +31,6 @@ from{
   transform: translateX(0%);
 }
 `;
-
 
 const FooterButton = styled.div`
   display: inherit;
@@ -71,15 +68,13 @@ const MyProfileFoto = styled.img`
   height: 150px;
   border-radius: 200px;
   border-left: 4px solid #fa163f;
-    border-bottom: 4px solid #12cad6;
-    border-right: 4px solid #e9c46a;
-    border-top: 4px solid #480ca8;
-  &:hover{
+  border-bottom: 4px solid #12cad6;
+  border-right: 4px solid #e9c46a;
+  border-top: 4px solid #480ca8;
+  &:hover {
     opacity: 1;
-    
   }
 `;
-
 
 const ImageContent = styled.div`
   padding-bottom: 20px;
@@ -90,7 +85,7 @@ const ImageContent = styled.div`
   align-items: center;
   justify-content: flex-end;
 
-  animation: ${rotate} 4s ease forwards ;
+  animation: ${rotate} 4s ease forwards;
   @media (max-width: 738px) {
     width: 50%;
   }
@@ -108,9 +103,7 @@ const HomeContainer = () => {
         <Biography />
       </Header>
       <FooterButton>
-        <MyButton clicked={projectsClickHandler}>
-          Mis proyectos
-        </MyButton>
+        <MyButton clicked={projectsClickHandler}>Mis proyectos</MyButton>
       </FooterButton>
     </Container>
   );
