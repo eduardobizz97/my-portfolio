@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { COLORS } from "../constants/Theme";
 import { NavLink as Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -69,17 +69,28 @@ export const Nav = styled.nav`
   }
 `;
 
+const appear = keyframes`
+  from{
+    transform: translateY(-100%);
+  }
+  to{
+    transform: translateY(0);
+
+  }
+`;
 export const HamburguerMenu = styled.nav`
   display: none;
   
   @media (max-width: 768px) {
     display: block;
-    height:100%;
     position: relative;
+    height:100%;
     width: 100%;
     background-color: ${COLORS.accent};
     border-bottom: 1px solid ${COLORS.primaryColor};
+    animation: ${appear} 500ms ease;
     ul {
+      
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -90,13 +101,12 @@ export const HamburguerMenu = styled.nav`
 
     li {
       padding: 10px;
-      width: 90%;
+      width: 100%;
       margin-top: 10px;
       border-radius: 5px;
       text-align: center;
       list-style: none;
       text-decoration: none;
-      
       border-bottom: 1px solid white;
     }
     .link{
@@ -109,6 +119,8 @@ export const HamburguerMenu = styled.nav`
   }
   }
 `;
+
+
 
 export const OpenMenu = styled(FaBars)`
   padding: 5px;

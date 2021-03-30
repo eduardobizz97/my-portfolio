@@ -42,27 +42,28 @@ const FooterButton = styled.div`
   align-items: center;
   justify-content: flex-start;
   transform: translateX(-100%);
-  animation: ${appear} 2s ease forwards;
+  animation: ${appear} 500ms ease forwards;
   animation-delay: 4s;
 `;
-const rotate = keyframes`
-  0% {
-    opacity: 0;
-    transform: rotate(0deg);
-  }30%{
-    transform: rotate(50deg);
-  }75%{
-    transform: rotate(-180deg);
-  }99%{
+// const rotate = keyframes`
+//   0% {
+//     opacity: 0;
+//     transform: rotate(0deg);
+//   }30%{
+//     transform: rotate(50deg);
+//   }75%{
+//     transform: rotate(-180deg);
+//   }99%{
   
-    border-bottom: 0px solid white;
-  }100%{
-    border-bottom: 1px solid white;
-  }
-`;
+//     border-bottom: 0px solid white;
+//   }100%{
+//     
+//   }
+// `;
 
 const MyProfileFoto = styled.img`
-  opacity: 0.9;
+  
+  
   object-fit: cover;
   width: 150px;
   height: 150px;
@@ -71,12 +72,10 @@ const MyProfileFoto = styled.img`
   border-bottom: 4px solid #12cad6;
   border-right: 4px solid #e9c46a;
   border-top: 4px solid #480ca8;
-  &:hover {
-    opacity: 1;
-  }
 `;
 
 const ImageContent = styled.div`
+  
   padding-bottom: 20px;
   width: 50%;
   height: 100%;
@@ -84,8 +83,8 @@ const ImageContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-
-  animation: ${rotate} 4s ease forwards;
+  border-bottom: 1px solid white;
+  
   @media (max-width: 738px) {
     width: 50%;
   }
