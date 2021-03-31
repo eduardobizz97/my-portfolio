@@ -43,7 +43,6 @@ const FooterButton = styled.div`
   justify-content: flex-start;
   transform: translateX(-100%);
   animation: ${appear} 500ms ease forwards;
-  animation-delay: 4s;
 `;
 // const rotate = keyframes`
 //   0% {
