@@ -6,13 +6,14 @@ import { FaBars, FaTimes } from "react-icons/fa";
 export const NavContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  width: 100%;
+  height:100%;
 `;
 
 export const BodyContainer = styled.div`
   width: 100%;
-  display: flex;
   height: 100%;
+  display: flex;
   background-color: transparent;
   justify-content: center;
 `;
