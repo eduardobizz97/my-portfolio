@@ -4,9 +4,6 @@ import { COLORS } from "../../constants/Theme";
 
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import CodeIcon from "@material-ui/icons/Code";
 import {
   SiAmazonaws,
   SiCsharp,
@@ -20,7 +17,6 @@ import {
   SiNodeDotJs,
   SiNpm,
   SiPhp,
-  SiPostgresql,
   SiReact,
   SiRedux,
 } from "react-icons/si";
@@ -33,13 +29,14 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   .biography-container {
-    margin-top: 80px;
-    width: 60%;
-
+    margin-top: 50px;
+    width: 80%;
+    
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
+    
   }
 
   .biography-text {
@@ -62,6 +59,7 @@ const Container = styled.div`
   }
   .biography-image {
     width: 35%;
+    height: 50%;
     img {
       width: 100%;
     }
@@ -113,7 +111,10 @@ const Container = styled.div`
 
   @media (max-width: 768px) {
     .biography-container {
-      width: 80%;
+      width: 100%;
+      padding-left:50px;
+      padding-right:50px;
+      background-color: ${COLORS.accent};
     }
     .biography-text {
       width: 100%;
