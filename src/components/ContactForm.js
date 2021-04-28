@@ -141,7 +141,7 @@ const ContactForm = () => {
   const formSubmissionHandler = (event) => {
     
     event.preventDefault();
-    console.log('a');
+    alert('a');
     setEnteredNameTouched(true);
     if (!enteredNameIsValid && !enteredNumberValid && !enteredEmailIsValid) {
       return;
@@ -151,7 +151,7 @@ const ContactForm = () => {
   };
   return (
     <div>
-      <Form method='POST' action={formSubmissionHandler}  allInvalid={allInvalid}>
+      <Form method='POST' onSubmit={formSubmissionHandler}  allInvalid={allInvalid}>
         <h3>Formulario de contacto</h3>
         <div className="input">
           <label for="name">Nombre completo:</label>
@@ -212,6 +212,7 @@ const ContactForm = () => {
             invalid={emailInputIsInvalid}
           />
         </div>
+        
         <Buttons valid={formIsValid} type='submit' disabled={!formIsValid}>
           Enviar
         </Buttons>
